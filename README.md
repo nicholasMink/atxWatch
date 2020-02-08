@@ -1,4 +1,4 @@
-Dependies  
+Dependencies  
 ```yarn add react react-dom react-router-dom```  
 
 Dev Dependencies  
@@ -8,16 +8,16 @@ Dev Dependencies
 ``` json
 // package.json  
 ...
-"babel": {
+ "babel": {
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
     ]
  },
-  "scripts": {
+ "scripts": {
     "create": "webpack",
     "start": "webpack-dev-server --open"
-  },
+ },
 ...
 ```
 
