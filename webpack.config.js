@@ -20,7 +20,15 @@ module.exports = {
   stats: 'minimal',
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
+      },
       {
         test: /\.module\.s(a|c)ss$/,
         loader: [
@@ -62,7 +70,8 @@ module.exports = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/public/index.html'
+      template: 'src/public/index.html',
+      filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
