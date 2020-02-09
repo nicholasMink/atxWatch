@@ -37,6 +37,12 @@
     animation: dash 0.1s ease-in-out;
   }
 
+  &-select {
+    &-options {
+      border: 1px solid #ddd;
+    }
+  }
+
   &-hidden {
     visibility: hidden;
     position: absolute;

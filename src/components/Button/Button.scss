@@ -43,7 +43,8 @@
     }
   }
 
-  &-link {
+  &-link,
+  &-select {
     border: none;
     margin: 0;
     width: 100%;
@@ -60,14 +61,24 @@
       background: #efefef;
     }
 
-    &--active,
-    &--active:hover {
-      color: #fff;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-      background: #009688;
-      background: linear-gradient(270deg, #013355 20%, #009688 100%);
-      cursor: default;
+    &--placeholder {
+      color: #999;
     }
+  }
 
+  &-link--active,
+  &-link--active:hover {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    background: #009688;
+    background: linear-gradient(270deg, #013355 20%, #009688 100%);
+    cursor: default;
+  }
+
+  &-select--active,
+  &-select--active:hover {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background: transparent;
   }
 }

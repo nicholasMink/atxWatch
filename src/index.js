@@ -9,19 +9,23 @@ import InputText from './components/Input/InputText'
 import Accordion from './components/Accordion/Accordion'
 import Toggle from './components/Toggle/Toggle'
 import InputCheckbox from './components/Input/InputCheckbox'
+import InputSelect from './components/Input/InputSelect'
 
+const COMPONENTS_LIST = ['button', 'accordion', 'input text', 'select input', 'toggle', 'checkbox']
 
-const COMPONENTS_LIST = ['button', 'accordion', 'input text', 'toggle', 'checkbox']
+const SELECT_ITEMS = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
 
 export default function App() {
-  const [activeComponent, setActiveComponent] = useState('accordion');
+  const [activeComponent, setActiveComponent] = useState('select input');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
+  const [selectInput, setSelectInput] = useState('');
   const handleComponent = e => setActiveComponent(e.target.id);
   const handleInput = e => setInputValue(e.target.value);
   const handleToggle = () => setToggleStatus(!toggleStatus);
   const handleCheckbox = () => setCheckboxStatus(!checkboxStatus);
+  const handleSelect = e => setSelectInput(e.target.id);
   const COMPONENTS = {
     button: {
       title: 'Primary Button',
@@ -57,6 +61,12 @@ export default function App() {
       title: 'checkbox',
       component: (
         <InputCheckbox label="Input Checkbox" isActive={checkboxStatus} onChange={() => handleCheckbox()} />
+      )
+    },
+    'select input': {
+      title: 'select input',
+      component: (
+        <InputSelect isActive={selectInput} label="Select Input" handleSelect={e => handleSelect(e)} items={SELECT_ITEMS} placeholder="Select..." />
       )
     }
   };
