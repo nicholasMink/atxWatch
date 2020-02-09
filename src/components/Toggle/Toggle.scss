@@ -1,0 +1,30 @@
+.toggle {
+  height: 1.25rem;
+  top: 0rem;
+  margin: 0;
+  border: none;
+  background: #ccc;
+  position: absolute;
+  width: 1.35rem;
+  border-radius: 50%;
+  right: 1.15rem;
+  transition: all 0.1s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+  &--active {
+    right: 0;
+    background: #009688;
+  }
+  &-wrapper {
+    position: relative;
+    width: 2.15rem;
+    height: 1.20rem;
+    border: none;
+    padding: 0.05rem;
+    border-radius: 1.8rem;
+    background: #ddd;
+    cursor: pointer;
+  }
+}

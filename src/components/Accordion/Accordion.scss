@@ -1,0 +1,41 @@
+.accordion {
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  color: #111;
+
+  &--active {
+    background: #111;
+    color: #fff;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid #111;
+  }
+
+  &-content {
+    padding: 0.8rem;
+    height: inherit;
+    opacity: 1;
+    animation: grow 0.3s linear;
+  }
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 50%;
+  }
+  80% {
+    height: inherit;
+  }
+  100% {
+    opacity: 1;
+  }
+}

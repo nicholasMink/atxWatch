@@ -1,0 +1,73 @@
+.btn {
+  &-primary,
+  &-secondary,
+  &-accent {
+    outline: none;
+    font-size: 0.9rem;
+    background: transparent;
+    padding: 0.8rem;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.09rem;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    
+    &:hover {
+      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+      background: #111;
+      color: #fff;
+    }
+  }
+
+  &-secondary {
+    background: #111;
+    color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: #111;
+    }
+  }
+
+  &-accent {
+    color: #fff;
+    background: #009688;
+    background: linear-gradient(270deg, #013355 0%, #009688 100%);
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: linear-gradient(270deg, #013355 0%, #009688 100%);
+    }
+  }
+
+  &-link {
+    border: none;
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.09rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    outline: none;
+    background: transparent;
+
+    &:hover {
+      background: #efefef;
+    }
+
+    &--active,
+    &--active:hover {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      background: #009688;
+      background: linear-gradient(270deg, #013355 20%, #009688 100%);
+      cursor: default;
+    }
+
+  }
+}
