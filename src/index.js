@@ -16,7 +16,7 @@ const COMPONENTS_LIST = ['button', 'accordion', 'input text', 'select input', 't
 const SELECT_ITEMS = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
 
 export default function App() {
-  const [activeComponent, setActiveComponent] = useState('select input');
+  const [activeComponent, setActiveComponent] = useState('button');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
