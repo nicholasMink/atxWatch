@@ -74,7 +74,7 @@ export default function App() {
     <div className="page-wrapper">
       <Header />
       <div className="sidebar-main-wrapper">
-        <Sidebar isActive={activeComponent} components={COMPONENTS_LIST} onClick={e => handleComponent(e)} />
+        <Sidebar activeItem={activeComponent} sidebarItems={COMPONENTS_LIST} onClick={e => handleComponent(e)} />
         <Main activeComponent={COMPONENTS[activeComponent].component} />
       </div>
     </div>
