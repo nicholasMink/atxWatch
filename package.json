@@ -35,5 +35,10 @@
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "stats": "webpack --mode production --json > stats.json"
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "yarn"
   }
 }
