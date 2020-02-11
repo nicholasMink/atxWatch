@@ -8,10 +8,11 @@ import Accordion from '../components/Accordion/Accordion'
 import Toggle from '../components/Toggle/Toggle'
 import InputCheckbox from '../components/Input/InputCheckbox'
 import InputSelect from '../components/Input/InputSelect'
-import { COMPONENTS_LIST, SELECT_ITEMS } from '../constants/pattern-library'
+import { COMPONENTS_LIST, SELECT_ITEMS, CARD_CONTENT } from '../constants/pattern-library'
+import Card from '../components/Card/Card'
 
 function PatternLibrary() {
-  const [activeComponent, setActiveComponent] = useState('button');
+  const [activeComponent, setActiveComponent] = useState('card');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -62,6 +63,12 @@ function PatternLibrary() {
       title: 'select input',
       component: (
         <InputSelect isActive={selectInput} label="Select Input" handleSelect={e => handleSelect(e)} items={SELECT_ITEMS} placeholder="Select..." />
+      )
+    },
+    card: {
+      title: 'card',
+      component: (
+        <Card card={CARD_CONTENT} />
       )
     }
   };
