@@ -6,15 +6,14 @@ function Header(props) {
   return (
     <header className="header-wrapper">
       <h2 className="header-title">
-        Pattern Library
+        {props.title}
       </h2>
     </header>
   )
 }
 
 Header.propTypes = {
-
+  title: PropTypes.string,
 }
 
 export default Header
-
