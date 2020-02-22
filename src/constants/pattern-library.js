@@ -1,4 +1,4 @@
-export const COMPONENTS_LIST = ['text', 'button', 'accordion', 'input text', 'select input', 'toggle', 'checkbox', 'card', 'toast'];
+export const COMPONENTS_LIST = ['text', 'button', 'accordion', 'input text', 'select input', 'toggle', 'checkbox', 'card', 'toast', 'map'];
 
 export const SELECT_ITEMS = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 

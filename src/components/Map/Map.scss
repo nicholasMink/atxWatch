@@ -1,0 +1,12 @@
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl,
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
+
+.map {
+  &-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}

@@ -13,6 +13,9 @@ import InputSelect from '../components/Input/InputSelect'
 import { COMPONENTS_LIST, SELECT_ITEMS, CARD_CONTENT } from '../constants/pattern-library'
 import Card from '../components/Card/Card'
 import Text from '../components/Text/Text'
+import Map from '../components/Map/Map';
+import { Layer, Feature } from 'react-mapbox-gl'
+import { MAP_DEFAULT } from '../constants/map';
 
 function PatternLibrary() {
   const [activeComponent, setActiveComponent] = useState('text');
@@ -108,6 +111,16 @@ function PatternLibrary() {
         </div>
       )
     },
+    map: {
+      title: 'map',
+      component: (
+        <Map config={MAP_DEFAULT}>
+          <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+            <Feature coordinates={MAP_DEFAULT.center} />
+          </Layer>
+        </Map>
+      )
+    }
   };
   return (
     <div className="page-wrapper">
