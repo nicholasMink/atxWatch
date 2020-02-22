@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import Main from '../components/layouts/Main'
 import Header from '../components/layouts/Header'
 import Sidebar from '../components/Sidebar/Sidebar'
@@ -10,9 +12,10 @@ import InputCheckbox from '../components/Input/InputCheckbox'
 import InputSelect from '../components/Input/InputSelect'
 import { COMPONENTS_LIST, SELECT_ITEMS, CARD_CONTENT } from '../constants/pattern-library'
 import Card from '../components/Card/Card'
+import Text from '../components/Text/Text'
 
 function PatternLibrary() {
-  const [activeComponent, setActiveComponent] = useState('card');
+  const [activeComponent, setActiveComponent] = useState('text');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -22,7 +25,30 @@ function PatternLibrary() {
   const handleToggle = () => setToggleStatus(!toggleStatus);
   const handleCheckbox = () => setCheckboxStatus(!checkboxStatus);
   const handleSelect = e => setSelectInput(e.target.id);
+  const notify = () => toast("Primary toast message");
   const COMPONENTS = {
+    text: {
+      title: 'text',
+      component: (
+        <div>
+          <Text size="large">
+            Large text
+          </Text>
+          <Text>
+            Default text
+          </Text>
+          <Text size="small">
+            Small text
+          </Text>
+          <Text size="small" uppercase>
+            Small uppercase text
+          </Text>
+          <Text letterSpacing size="small" uppercase bold>
+            Small text with letter spacing uppercase, and bold
+          </Text>
+        </div>
+      )
+    },
     button: {
       title: 'Primary Button',
       component: (
@@ -70,7 +96,18 @@ function PatternLibrary() {
       component: (
         <Card card={CARD_CONTENT} />
       )
-    }
+    },
+    toast: {
+      title: 'toast',
+      component: (
+        <div>
+          <Button id="primary" className="btn-accent" onClick={notify}>
+            Notify !
+          </Button>
+          <ToastContainer />
+        </div>
+      )
+    },
   };
   return (
     <div className="page-wrapper">

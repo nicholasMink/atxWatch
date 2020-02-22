@@ -1,0 +1,42 @@
+.text {
+  &-normal,
+  &-small,
+  &-large {
+    color: #111;
+    margin: 0;
+  }
+
+  &-normal-light,
+  &-small-light,
+  &-large-light {
+    color: #fff;
+    margin: 0;
+  }
+
+  &-normal,
+  &-normal-light {
+    font-size: 1rem;
+  }
+
+  &-small,
+  &-small-light {
+    font-size: 0.825rem;
+  }
+
+  &-large,
+  &-large-light {
+    font-size: 1.25rem;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.letter-spacing {
+  letter-spacing: 0.0825rem;
+}

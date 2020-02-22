@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import './Card.scss'
 
 function Card(props) {
-  const { card, type } = props;
-  const renderCardPlain = () => (
+  const { card } = props;
+  const renderCard = () => (
     <div className="card-wrapper">
       <div className="card-header">
         <p className="card-title">
@@ -19,40 +19,8 @@ function Card(props) {
       </div>
     </div>
   );
-  const renderCardAnimated = () => (
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <div className="card-header">
-            <p className="card-title">
-              {card.title}
-            </p>
-            <p className="card-date">
-              {card.date}
-            </p>
-          </div>
-          <div className="card-image" />
-          <p className="card-content">
-            {card.content}
-          </p>
-        </div>
-        <div className="flip-card-back">
-          <div className="card-header">
-            <p className="card-title">
-              {card.title}
-            </p>
-            <p className="card-date">
-              {card.date}
-            </p>
-          </div>
-          <div className="card-image" />
-          <p className="card-content">{card.content}</p>
-        </div>
-      </div>
-    </div>
-  );
-  const renderedCard = type === 'animated' ? renderCardAnimated() : renderCardPlain();
-  return renderedCard;
+  const cardComponent = renderCard();
+  return cardComponent;
 }
 
 Card.defaultProps = {
