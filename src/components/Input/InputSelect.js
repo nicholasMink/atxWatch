@@ -21,7 +21,12 @@ function InputSelect(props) {
     <div className="input-top">
       <label htmlFor={`${label}-input`} className="input-label">{label}</label>
       <Button id={`${label}-input`} className={`btn-select btn-select--active ${isActive === '' && 'btn-select--placeholder'}`} onClick={() => toggleOptions()}>
-        {selectedItem}
+        <span className="btn-select-content">
+          {selectedItem}
+          <svg className={`${isOptionsActive ? 'select arrow select-arrow-up' : 'select-arrow'}`} width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path className="select-toggle" d="M14.25 1.25L7.75 7.75L1.25 1.25" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+        </span>
       </Button>
       {isOptionsActive && (
         <span className="input-select-options">

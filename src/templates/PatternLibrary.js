@@ -18,7 +18,7 @@ import { Layer, Feature } from 'react-mapbox-gl'
 import { MAP_DEFAULT } from '../constants/map';
 
 function PatternLibrary() {
-  const [activeComponent, setActiveComponent] = useState('text');
+  const [activeComponent, setActiveComponent] = useState('select input');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);

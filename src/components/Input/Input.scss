@@ -39,7 +39,8 @@
 
   &-select {
     &-options {
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
+      border-top: none;
     }
   }
 
@@ -57,6 +58,22 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+  }
+}
+
+.select {
+  &-toggle {
+    stroke: #bcbcbc;
+  }
+
+  &-arrow {
+    transform: rotate(0);
+    transition: all 0.1s ease-in-out;
+
+    &-up {
+      transform: rotate(-180deg);
+      transition: all 0.1s ease-in-out;
+    }
   }
 }
 
