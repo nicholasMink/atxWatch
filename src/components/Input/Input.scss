@@ -1,0 +1,70 @@
+.input {
+  padding: 0.5rem 0;
+  text-indent: 0.3rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  background: transparent;
+
+  &::placeholder {
+    color: #bcbcbc;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: 2px solid #aaa;
+  }
+
+  &-label,
+  &-label-checkbox {
+    color: #111;
+    font-size: 0.9rem;
+    letter-spacing: 0.07rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &-label-checkbox {
+    padding-left: 0.25rem;
+    line-height: 0.9rem;
+  }
+
+  &-check {
+    stroke-dasharray: 32;
+    stroke-dashoffset: 0;
+    animation: dash 0.1s ease-in-out;
+  }
+
+  &-select {
+    &-options {
+      border: 1px solid #ddd;
+    }
+  }
+
+  &-hidden {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &-top {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 10;
+  }
+}

@@ -1,0 +1,36 @@
+.sidebar {
+  &-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    background: #efefef;
+
+    &--open {
+      min-width: 15rem;
+      max-width: 25rem;
+      background: transparent;
+      z-index: 0;
+    }
+  }
+
+  &-toggle {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+
+    &-btn {
+      background: none;
+      border: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 1rem;
+      transform: rotate(0);
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+      outline: none;
+
+      &--active {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
