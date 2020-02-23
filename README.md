@@ -13,6 +13,7 @@ Components:
  - Select Input
  - Toggle
  - Checkbox
+ - Breadcrumbs
  - Card
  - Toast
  - Map
