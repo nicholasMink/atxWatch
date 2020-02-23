@@ -43,8 +43,7 @@
     }
   }
 
-  &-link,
-  &-select {
+  &-link {
     border: none;
     margin: 0;
     width: 100%;
@@ -73,30 +72,5 @@
     background: #009688;
     background: linear-gradient(270deg, #013355 20%, #009688 100%);
     cursor: default;
-  }
-
-  &-select {
-    padding: 0.5rem 0.75rem 0.5rem 0;
-    text-indent: 0.3rem;
-    font-size: 1rem;
-    text-transform: capitalize;
-    color: #111;
-
-    &--placeholder {
-      color: #bcbcbc;
-    }
-
-    &-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &-select--active,
-  &-select--active:hover {
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    background: transparent;
   }
 }

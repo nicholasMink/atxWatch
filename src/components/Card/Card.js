@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import './Card.scss'
 
 function Card(props) {
-  const { card } = props;
+  const { card, accentHeader } = props;
   const renderCard = () => (
     <div className="card-wrapper">
-      <div className="card-header">
+      <div className={`card-header ${accentHeader ? 'card-accent' : ''}`}>
         <p className="card-title">
           {card.title}
         </p>

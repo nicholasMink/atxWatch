@@ -38,9 +38,45 @@
   }
 
   &-select {
+    border: none;
+    margin: 0;
+    width: 100%;
+    color: #111;
+    font-size: 1rem;
+    text-align: left;
+    text-indent: 0.3rem;
+    text-transform: capitalize;
+    letter-spacing: 0.09rem;
+    outline: none;
+    background: transparent;
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background: #efefef;
+    }
+
+    &--placeholder {
+      color: #bcbcbc;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     &-options {
       border: 2px solid #ddd;
       border-top: none;
+    }
+
+    &--active,
+    &--active:hover {
+      border: 2px solid #ddd;
+      border-radius: 3px;
+      background: transparent;
     }
   }
 

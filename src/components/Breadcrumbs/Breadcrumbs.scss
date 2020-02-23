@@ -1,0 +1,21 @@
+.breadcrumb {
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05rem;
+  color: #111;
+
+  &-container {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &-spacer {
+    padding: 0 0.35rem;
+    font-size: 0.7rem;
+  }
+
+  &-current {
+    cursor: default;
+  }
+}

@@ -16,9 +16,10 @@ import Text from '../components/Text/Text'
 import Map from '../components/Map/Map';
 import { Layer, Feature } from 'react-mapbox-gl'
 import { MAP_DEFAULT } from '../constants/map';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 function PatternLibrary() {
-  const [activeComponent, setActiveComponent] = useState('select input');
+  const [activeComponent, setActiveComponent] = useState('card');
   const [inputValue, setInputValue] = useState('');
   const [toggleStatus, setToggleStatus] = useState(false);
   const [checkboxStatus, setCheckboxStatus] = useState(false);
@@ -97,7 +98,7 @@ function PatternLibrary() {
     card: {
       title: 'card',
       component: (
-        <Card card={CARD_CONTENT} />
+        <Card card={CARD_CONTENT} accentHeader />
       )
     },
     toast: {
@@ -110,6 +111,10 @@ function PatternLibrary() {
           <ToastContainer />
         </div>
       )
+    },
+    breadcrumbs: {
+      title: 'breadcrumbs',
+      component: <Breadcrumbs url="components/breadcrumbs" />
     },
     map: {
       title: 'map',

@@ -29,3 +29,13 @@ ul {
   display: flex;
   flex-grow: 1;
 }
+
+::-moz-selection {
+  color: #009688;
+  background: #013355;
+}
+
+::selection {
+  color: #009688;
+  background: #013355;
+}
