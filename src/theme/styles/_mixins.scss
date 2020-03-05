@@ -1,0 +1,6 @@
+@import './variables';
+
+@mixin bgGradient {
+  background: $accent;
+  background: $accentGradient;
+}

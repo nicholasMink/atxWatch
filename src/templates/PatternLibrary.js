@@ -29,7 +29,7 @@ function PatternLibrary() {
   const handleToggle = () => setToggleStatus(!toggleStatus);
   const handleCheckbox = () => setCheckboxStatus(!checkboxStatus);
   const handleSelect = e => setSelectInput(e.target.id);
-  const notify = () => toast("Primary toast message");
+  const notify = () => toast("Primary toast message", { position: toast.POSITION.BOTTOM_RIGHT });
   const COMPONENTS = {
     text: {
       title: 'text',
@@ -128,9 +128,9 @@ function PatternLibrary() {
     }
   };
   return (
-    <div className="page-wrapper">
+    <div className="app-wrapper">
       <Header title="Pattern Library" />
-      <div className="sidebar-main-wrapper">
+      <div className="app-wrapper--content">
         <Sidebar activeItem={activeComponent} sidebarItems={COMPONENTS_LIST} onClick={e => handleComponent(e)} />
         <Main activeComponent={COMPONENTS[activeComponent].component} />
       </div>

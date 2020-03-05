@@ -1,11 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.scss'
+import './theme/main.scss'
 import PatternLibrary from './templates/PatternLibrary'
 
-export default function App() {
-  const patternLibrary = <PatternLibrary />
-  return patternLibrary;
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<PatternLibrary />, document.getElementById('app'))

@@ -1,0 +1,30 @@
+@import './variables';
+
+* {
+  margin: 0;
+}
+
+body {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+}
+
+p, button, a, li, div, h1, h2, h3, input, label {
+  font-family: $fontFamily;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  color: $accent;
+  background: $secondary;
+}
+
+::selection {
+  color: $accent;
+  background: $secondary;
+}
