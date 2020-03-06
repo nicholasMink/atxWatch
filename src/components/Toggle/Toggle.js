@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Toggle.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Toggle.scss';
 
 function Toggle(props) {
   const { isActive, onClick } = props;
@@ -9,13 +9,12 @@ function Toggle(props) {
     <div className="toggle-wrapper" onClick={onClick}>
       <button className={toggleClass} onClick={onClick} />
     </div>
-  )
+  );
 }
 
 Toggle.propTypes = {
   isActive: PropTypes.bool,
   onClick: PropTypes.func,
-}
+};
 
-export default Toggle
-
+export default Toggle;

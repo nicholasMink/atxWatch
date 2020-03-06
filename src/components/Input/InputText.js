@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Input.scss';
 
 function InputText(props) {
@@ -9,9 +9,17 @@ function InputText(props) {
       <label className="input-label" htmlFor={`${label}-input`}>
         {props.label}
       </label>
-      <input placeholder={placeholder} id={`${label}-input`} name={label} className="input" value={inputValue} type="text" onChange={onChange} />
+      <input
+        placeholder={placeholder}
+        id={`${label}-input`}
+        name={label}
+        className="input"
+        value={inputValue}
+        type="text"
+        onChange={onChange}
+      />
     </div>
-  )
+  );
 }
 
 InputText.propTypes = {
@@ -20,7 +28,6 @@ InputText.propTypes = {
   placeholder: PropTypes.string,
   inputValue: PropTypes.string,
   onChange: PropTypes.func,
-}
+};
 
-export default InputText
-
+export default InputText;

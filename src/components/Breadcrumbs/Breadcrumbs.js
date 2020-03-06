@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import './Breadcrumbs.scss'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import './Breadcrumbs.scss';
 
 function Breadcrumbs(props) {
   const { url = '' } = props;
@@ -11,7 +11,7 @@ function Breadcrumbs(props) {
         <p key={bcrumb} className="breadcrumb breadcrumb-current">
           {bcrumb}
         </p>
-      )
+      );
     }
     return (
       <Fragment key={bcrumb}>
@@ -20,26 +20,21 @@ function Breadcrumbs(props) {
         </a>
         <span className="breadcrumb-spacer">/</span>
       </Fragment>
-    )
+    );
   });
   breadcrumbs.unshift(
-    <Fragment key='home'>
-      <a href="/" className="breadcrumb">Home</a>
-      {Boolean(url.length) && (
-        <span className="breadcrumb-spacer">/</span>
-      )}
+    <Fragment key="home">
+      <a href="/" className="breadcrumb">
+        Home
+      </a>
+      {Boolean(url.length) && <span className="breadcrumb-spacer">/</span>}
     </Fragment>
-  )
-  return (
-    <div className="breadcrumb-container">
-      {breadcrumbs}
-    </div>
-  )
+  );
+  return <div className="breadcrumb-container">{breadcrumbs}</div>;
 }
 
 Breadcrumbs.propTypes = {
   url: PropTypes.string,
-}
+};
 
-export default Breadcrumbs
-
+export default Breadcrumbs;

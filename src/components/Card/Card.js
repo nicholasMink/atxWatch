@@ -1,22 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './Card.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Card.scss';
 
 function Card(props) {
   const { card, accentHeader } = props;
   const renderCard = () => (
     <div className="card-wrapper">
       <div className={`card-header ${accentHeader ? 'card-accent' : ''}`}>
-        <p className="card-title">
-          {card.title}
-        </p>
-        <p className="card-date">
-          {card.date}
-        </p>
+        <p className="card-title">{card.title}</p>
+        <p className="card-date">{card.date}</p>
       </div>
-      <div className="card-content">
-        {card.content}
-      </div>
+      <div className="card-content">{card.content}</div>
     </div>
   );
   const cardComponent = renderCard();
@@ -30,7 +24,7 @@ Card.defaultProps = {
     content: '',
   },
   type: '',
-}
+};
 
 Card.propTypes = {
   card: PropTypes.shape({
@@ -39,7 +33,6 @@ Card.propTypes = {
     content: PropTypes.string,
   }),
   type: PropTypes.string,
-}
+};
 
-export default Card
-
+export default Card;

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/Button';
-import './Accordion.scss'
+import './Accordion.scss';
 
 function Accordion(props) {
   const { defaultOpen, content, title, className } = props;
@@ -10,27 +10,25 @@ function Accordion(props) {
 
   return (
     <div className="accordion-wrapper">
-      <Button onClick={() => handleAccordion()} className={`btn-primary accordion ${isOpen && 'accordion--active'} ${className}`}>
+      <Button
+        onClick={() => handleAccordion()}
+        className={`btn-primary accordion ${isOpen && 'accordion--active'} ${className}`}
+      >
         {title}
       </Button>
-      {isOpen && (
-        <span className="accordion-content">
-          {content}
-        </span>
-      )}
+      {isOpen && <span className="accordion-content">{content}</span>}
     </div>
-  )
+  );
 }
 
 Accordion.defaultProps = {
   defaultOpen: false,
   className: '',
-}
+};
 
 Accordion.propTypes = {
   title: PropTypes.string,
   content: PropTypes.any,
-}
+};
 
-export default Accordion
-
+export default Accordion;

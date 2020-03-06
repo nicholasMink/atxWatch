@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ReactMapboxGl from 'react-mapbox-gl'
-import './Map.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactMapboxGl from 'react-mapbox-gl';
+import './Map.scss';
 
 function Map(props) {
   const { geoJson, config, children } = props;
@@ -16,22 +16,22 @@ function Map(props) {
         style={style}
         containerStyle={{
           height: '100%',
-          width: '100%'
+          width: '100%',
         }}
         center={center}
       >
         {children}
       </Map>
     </div>
-  )
+  );
 }
 
 Map.defaultProps = {
   geoJson: {},
   config: {
-    center: [-97.733330, 30.266666],
-  }
-}
+    center: [-97.73333, 30.266666],
+  },
+};
 
 Map.propTypes = {
   geoJson: PropTypes.object,
@@ -40,7 +40,6 @@ Map.propTypes = {
     style: PropTypes.string.isRequired,
     center: PropTypes.array,
   }),
-}
+};
 
-export default Map
-
+export default Map;
