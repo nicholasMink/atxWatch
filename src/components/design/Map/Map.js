@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMapboxGl from 'react-mapbox-gl';
+import { MAP_DEFAULT } from '../../../constants/map';
 import './Map.scss';
 
 function Map(props) {
-  const { geoJson, config, children } = props;
-  const { style, center, token } = config;
+  const { geoJson, children } = props;
+  const { style, center, token } = MAP_DEFAULT;
   const Map = ReactMapboxGl({
     accessToken: token,
   });
@@ -28,18 +29,10 @@ function Map(props) {
 
 Map.defaultProps = {
   geoJson: {},
-  config: {
-    center: [-97.73333, 30.266666],
-  },
 };
 
 Map.propTypes = {
   geoJson: PropTypes.object,
-  config: PropTypes.shape({
-    token: PropTypes.string.isRequired,
-    style: PropTypes.string.isRequired,
-    center: PropTypes.array,
-  }),
 };
 
 export default Map;

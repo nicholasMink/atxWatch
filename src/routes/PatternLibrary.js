@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Main from '../components/layouts/Main';
-import Header from '../components/layouts/Header';
-import Sidebar from '../components/Sidebar/Sidebar';
+import Main from '../components/design/layouts/Main';
+import Header from '../components/design/layouts/Header';
+import Sidebar from '../components/design/Sidebar/Sidebar';
 import Button from '../components/Button/Button';
-import InputText from '../components/Input/InputText';
+import InputText from '../components/design/Input/InputText';
 import Accordion from '../components/Accordion/Accordion';
-import Toggle from '../components/Toggle/Toggle';
-import InputCheckbox from '../components/Input/InputCheckbox';
-import InputSelect from '../components/Input/InputSelect';
+import Toggle from '../components/design/Toggle/Toggle';
+import InputCheckbox from '../components/design/Input/InputCheckbox';
+import InputSelect from '../components/design/Input/InputSelect';
 import { COMPONENTS_LIST, SELECT_ITEMS, CARD_CONTENT } from '../constants/pattern-library';
-import Card from '../components/Card/Card';
-import Text from '../components/Text/Text';
-import Map from '../components/Map/Map';
+import Card from '../components/design/Card/Card';
+import Text from '../components/design/Text/Text';
+import Map from '../components/design/Map/Map';
 import { Layer, Feature } from 'react-mapbox-gl';
 import { MAP_DEFAULT } from '../constants/map';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '../components/design/Breadcrumbs/Breadcrumbs';
 
 function PatternLibrary() {
   const [activeComponent, setActiveComponent] = useState('card');

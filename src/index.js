@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './theme/main.scss';
-import PatternLibrary from './templates/PatternLibrary';
+import App from './components/App/App';
 
-ReactDOM.render(<PatternLibrary />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
