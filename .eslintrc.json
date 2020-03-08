@@ -7,7 +7,7 @@
     }
   },
   "extends": ["plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -24,6 +24,8 @@
         "avoidEscape": true,
         "allowTemplateLiterals": true
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

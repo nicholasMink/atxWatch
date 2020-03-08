@@ -32,9 +32,9 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.module\.s(a|c)ss$/,
@@ -44,16 +44,16 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              sourceMap: isDevelopment
-            }
+              sourceMap: isDevelopment,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
       },
       {
         test: /\.s(a|c)ss$/,
@@ -64,25 +64,26 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
       },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
+    alias: { mobx: __dirname + '/node_modules/mobx/lib/mobx.es6.js' },
   },
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/public/index.html',
-      filename: "./index.html",
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map[query]',
@@ -91,7 +92,7 @@ module.exports = {
       exclude: ['vendor.js', '/node_modules/'],
     }),
     new webpack.DefinePlugin({
-      "process.env": JSON.stringify(dotenv.parsed)
+      'process.env': JSON.stringify(dotenv.parsed),
     }),
   ],
-}
+};

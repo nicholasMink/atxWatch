@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Marker, Layer, Feature } from 'react-mapbox-gl';
 
 function MonitorItem(props) {
-  const { onClick, coords, properties, zoom } = props;
+  const { onClick, coords, properties, zoom, id } = props;
   const mapMarker = (
     <Marker
       id={id}
@@ -15,7 +15,7 @@ function MonitorItem(props) {
       className="marker-styles"
       style={{ zIndex: 0 }}
     >
-      {itemIcon}
+      Cam
     </Marker>
   );
   const mapFeature = (
@@ -25,7 +25,7 @@ function MonitorItem(props) {
       filter={['==', 'extrude', 'true']}
       sourceLayer="building"
       type="fill-extrusion"
-      minZoom={16}
+      minZoom={12}
     >
       <Feature coordinates={coords} />
     </Layer>
