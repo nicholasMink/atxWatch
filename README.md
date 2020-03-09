@@ -1,25 +1,23 @@
-## Pattern Library
+### ATX Watch
 
-Install and start development server by running from the project's root folder
-```yarn && yarn start```  
+#### ATX Watch enables exploration throughout the city of Austin, Texas currently with data provided by the official City of Austin open data portal.
 
-All components are rendered in ```src/templates/PatternLibrary.js```  
+Older Project demo @ https://atx-connect.netlify.com
 
-Components:
- - Text
- - Button
- - Accordion
- - Text Input
- - Select Input
- - Toggle
- - Checkbox
- - Breadcrumbs
- - Card
- - Toast
- - Map
+Project tools:
 
+- React
+- Redux
+- Mapbox GL JS
+- <a href="https://data.austintexas.gov/">Official City of Austin open data portal APIs</a>
 
-> For the map component, you will need to create a .env file and add the following variables with your own credentials from a mapbox account (https://account.mapbox.com/)
+Contributing:
+
+- Fork/clone project and run `yarn && yarn start` or `npm install && npm run start` from the project root directory
+- Create branch, push changes, and open a pull request
+
+> For the map to work, you will need to create a .env file and add the following variables with your own credentials from a mapbox account (https://account.mapbox.com/)
+
 ```
 MAPBOX_API_KEY=pk.xxxx
 MAPBOX_URL=mapbox://styles/username/xxxx
