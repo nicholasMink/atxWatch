@@ -1,0 +1,122 @@
+@import '../../theme/styles/overrides/mapbox';
+@import '../../theme/styles/variables';
+@import '../../theme/styles/animations';
+
+.map {
+  &-container {
+    width: inherit;
+    position: relative;
+  }
+}
+
+.popup {
+  &-container {
+    .mapboxgl-popup-tip {
+      border-color: transparent;
+      border-style: solid;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .mapboxgl-popup-content {
+      padding: 0;
+      border-radius: 15px 15px 8px 8px;
+      border: 1px solid $dark-75;
+      background: $accent;
+      background: $accentGradient;
+    }
+  }
+
+  &-content {
+    padding-bottom: 0.75rem;
+
+    &-description {
+      color: $accentLight;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.85rem;
+      max-width: 23.4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @media screen and (max-width: 40em) {
+        max-width: 13rem;
+      }
+    }
+
+    &-img {
+      max-width: 25rem;
+      height: auto;
+
+      &-wrapper {
+        max-width: 25rem;
+        height: auto;
+      }
+      @media screen and (max-width: 40em) {
+        max-width: 15rem;
+      }
+    }
+
+    &-btn {
+      width: 100%;
+      background: $dark-75;
+      border: none;
+      color: $accentLight;
+      text-transform: none;
+      font-weight: normal;
+      padding: 0 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:focus,
+      &-active:focus {
+        outline: 0;
+      }
+      &:focus {
+        background: $accentLight;
+        color: $primary;
+      }
+      &:hover {
+        color: $dark-75;
+        background: $light-75;
+        transition: all 0.2s ease-out;
+      }
+
+      &-close {
+        background: none;
+        border: none;
+        color: $light-75;
+        font-size: 0.75rem;
+        cursor: pointer;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    &-hidden {
+      display: none;
+    }
+
+    &-active {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+      padding: 0.25rem 0 0.5rem;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: bold;
+      background: $light-50;
+      color: $dark-75;
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      width: max-content;
+      margin-left: 0.5rem;
+    }
+  }
+}

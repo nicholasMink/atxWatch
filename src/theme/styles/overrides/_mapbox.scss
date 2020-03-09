@@ -1,0 +1,9 @@
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl,
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
+
+// mapbox icons
+.marker-styles {
+  z-index: 0;
+}

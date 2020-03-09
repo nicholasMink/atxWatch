@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Marker, Layer, Feature } from 'react-mapbox-gl';
+import { ICONS } from '../design/Icons/Icons';
 
 function MonitorItem(props) {
   const { onClick, coords, properties, zoom, id } = props;
@@ -15,7 +16,7 @@ function MonitorItem(props) {
       className="marker-styles"
       style={{ zIndex: 0 }}
     >
-      Cam
+      {ICONS.cams}
     </Marker>
   );
   const mapFeature = (
@@ -25,7 +26,6 @@ function MonitorItem(props) {
       filter={['==', 'extrude', 'true']}
       sourceLayer="building"
       type="fill-extrusion"
-      minZoom={12}
     >
       <Feature coordinates={coords} />
     </Layer>
@@ -35,7 +35,7 @@ function MonitorItem(props) {
 }
 
 MonitorItem.defaultProps = {
-  zoom: [12],
+  zoom: [11],
 };
 
 MonitorItem.propTypes = {

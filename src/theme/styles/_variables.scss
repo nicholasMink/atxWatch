@@ -1,7 +1,15 @@
-// Colors
+// Theme Colors
 $primary: #111;
 $secondary: #013355;
 $accent: #009688;
+$accentLight: #b7ebe5;
+
+// Color with Opacity
+$dark-75: rgba(40, 51, 57, 0.75);
+$light-75: rgba(255, 255, 255, 0.75);
+$light-50: rgba(255, 255, 255, 0.5);
+
+// Gradients
 $accentGradient: linear-gradient(270deg, $secondary 0%, $accent 100%);
 
 // Fonts
