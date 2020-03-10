@@ -5,9 +5,11 @@ import { connect, useDispatch } from 'react-redux';
 import ReactMapboxGl, { Popup } from 'react-mapbox-gl';
 import MonitorItem from './MonitorItem';
 import { getTrafficCams } from '../../redux/actions/trafficCams';
-import { MAP_DEFAULT } from '../../constants/map';
+import { MAP_DEFAULT, MONITOR_ENDPOINT_MAPPER } from '../../constants/map';
 import './Monitor.scss';
 import { getImageFallback } from '../../utils/trafficCams';
+import MonitorSelect from './MonitorSelect';
+import Loader from '../design/Loader/Loader';
 
 const { style, center, accessToken, minZoom, maxZoom, flyToOptions, offset } = MAP_DEFAULT;
 
@@ -19,6 +21,7 @@ const Mapbox = ReactMapboxGl({
 
 function Monitor(props) {
   const { cams = [], camsStatus, getTrafficCams } = props;
+  const [activeArea, setActiveArea] = useState({ value: 'ALL' });
   const [popupItem, setPopupItem] = useState({ isActive: false });
   const [mapOptions, setMapOptions] = useState({ zoom: [11], bearing: [30], pitch: [45] });
   const dispatch = useDispatch();
@@ -31,6 +34,18 @@ function Monitor(props) {
     };
     fetchCams();
   }, []);
+
+  const handleMonitorSelect = e => {
+    const { value } = e;
+    if (activeArea === value) return false;
+    const query = `&ip_comm_status=ONLINE${MONITOR_ENDPOINT_MAPPER[value]}`;
+    setActiveArea({ value });
+    updateTrafficCams(query);
+  }
+
+  const updateTrafficCams = query => {
+    getTrafficCams(query);
+  }
 
   const openPopup = (e, data) => {
     e.preventDefault();
@@ -54,9 +69,10 @@ function Monitor(props) {
 
   return (
     <div className="app-wrapper--content">
+      <MonitorSelect onChange={handleMonitorSelect} />
       <main className="app-wrapper--main">
         {(camsStatus === 'loading' || camsStatus === 'error') && (
-          <div>{`Traffic cameras ${camsStatus}...`}</div>
+          <Loader status={camsStatus} />
         )}
         <div className="map-container">
           <Mapbox
