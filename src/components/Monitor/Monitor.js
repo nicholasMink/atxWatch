@@ -7,6 +7,7 @@ import MonitorItem from './MonitorItem';
 import { getTrafficCams } from '../../redux/actions/trafficCams';
 import { MAP_DEFAULT } from '../../constants/map';
 import './Monitor.scss';
+import { getImageFallback } from '../../utils/trafficCams';
 
 const { style, center, accessToken, minZoom, maxZoom, flyToOptions, offset } = MAP_DEFAULT;
 
@@ -19,7 +20,7 @@ const Mapbox = ReactMapboxGl({
 function Monitor(props) {
   const { cams = [], camsStatus, getTrafficCams } = props;
   const [popupItem, setPopupItem] = useState({ isActive: false });
-  const [mapOptions, setMapOptions] = useState({ zoom: [11], bearing: 0, pitch: 0 });
+  const [mapOptions, setMapOptions] = useState({ zoom: [11], bearing: [30], pitch: [45] });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -66,6 +67,8 @@ function Monitor(props) {
             }}
             center={center}
             zoom={mapOptions.zoom}
+            pitch={mapOptions.pitch}
+            bearing={mapOptions.bearing}
             flyToOptions={flyToOptions}
             onClick={() => closePopup()}
           >
@@ -85,6 +88,7 @@ function Monitor(props) {
                       id={`img-${popupItem.id}`}
                       className="popup-content-img"
                       src={`${popupItem.imageUrl}`}
+                      onError={e => getImageFallback(e)}
                       alt="Latest image isn't unavailable"
                     />
                   )}

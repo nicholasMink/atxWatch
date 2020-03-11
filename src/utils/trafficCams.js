@@ -1,3 +1,4 @@
+import fallbackImage from '../public/static/imageNotAvailable.png';
 /*
   Initial traffic cam object shape
   {
@@ -56,4 +57,8 @@ export const formatCamData = (data = []) => {
     return camObj;
   });
   return cams;
+};
+
+export const getImageFallback = e => {
+  e.target.src = fallbackImage;
 };
