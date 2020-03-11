@@ -15,8 +15,9 @@ Contributing:
 
 - Fork/clone project and run `yarn && yarn start` or `npm install && npm run start` from the project root directory
 - Create branch, push changes, and open a pull request
-
-> For the map to work, you will need to create a .env file and add the following variables with your own credentials from a mapbox account (https://account.mapbox.com/)
+#### Notes 
+> * This project currently works with nodejs >=12.16.1 npm >=6.13.4
+> * For the map to work, you will need to create a .env file and add the following variables with your own credentials from a mapbox account (https://account.mapbox.com/)
 
 ```
 MAPBOX_API_KEY=pk.xxxx
