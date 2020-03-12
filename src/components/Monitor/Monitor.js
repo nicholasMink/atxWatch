@@ -11,7 +11,7 @@ import { getImageFallback } from '../../utils/trafficCams';
 import MonitorSelect from './MonitorSelect';
 import Loader from '../design/Loader/Loader';
 
-const { style, center, accessToken, minZoom, maxZoom, flyToOptions, offset } = MAP_DEFAULT;
+const { style, center, accessToken, minZoom, maxZoom, flyToOptions, offset, defaultSelectedArea } = MAP_DEFAULT;
 
 const Mapbox = ReactMapboxGl({
   minZoom,
@@ -21,7 +21,7 @@ const Mapbox = ReactMapboxGl({
 
 function Monitor(props) {
   const { cams = [], camsStatus, getTrafficCams } = props;
-  const [activeArea, setActiveArea] = useState({ value: 'ALL' });
+  const [activeArea, setActiveArea] = useState(defaultSelectedArea);
   const [popupItem, setPopupItem] = useState({ isActive: false });
   const [mapOptions, setMapOptions] = useState({ zoom: [11], bearing: [30], pitch: [45] });
   const dispatch = useDispatch();
@@ -36,10 +36,10 @@ function Monitor(props) {
   }, []);
 
   const handleMonitorSelect = e => {
+    if (activeArea === e) return false;
     const { value } = e;
-    if (activeArea === value) return false;
     const query = `&ip_comm_status=ONLINE${MONITOR_ENDPOINT_MAPPER[value]}`;
-    setActiveArea({ value });
+    setActiveArea(e);
     updateTrafficCams(query);
   }
 
@@ -69,7 +69,7 @@ function Monitor(props) {
 
   return (
     <div className="app-wrapper--content">
-      <MonitorSelect onChange={handleMonitorSelect} />
+      <MonitorSelect selectedObj={activeArea} onChange={handleMonitorSelect} />
       <main className="app-wrapper--main">
         {(camsStatus === 'loading' || camsStatus === 'error') && (
           <Loader status={camsStatus} />

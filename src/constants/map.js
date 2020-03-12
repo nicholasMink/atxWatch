@@ -6,6 +6,10 @@ export const MAP_DEFAULT = {
   maxZoom: 18,
   flyToOptions: { speed: 0.8 },
   offset: { 'bottom-left': [12, -38], bottom: [0, -38], 'bottom-right': [-12, -38] },
+  defaultSelectedArea: {
+    value: 'ALL',
+    label: 'GREATER AUSTIN AREA'
+  },
 };
 
 
