@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import _isEmpty from 'lodash/isEmpty';
 import { connect, useDispatch } from 'react-redux';
-import ReactMapboxGl, { Popup } from 'react-mapbox-gl';
+import ReactMapboxGl, { Popup, ScaleControl } from 'react-mapbox-gl';
 import MonitorItem from './MonitorItem';
 import { getTrafficCams } from '../../redux/actions/trafficCams';
 import { MAP_DEFAULT, MONITOR_ENDPOINT_MAPPER } from '../../constants/map';
@@ -88,6 +88,7 @@ function Monitor(props) {
             flyToOptions={flyToOptions}
             onClick={() => closePopup()}
           >
+            <ScaleControl measurement="mi" position="bottom-left" style={MAP_DEFAULT.scaleStyles} />
             {renderMonitorItems}
             {popupItem.isActive && (
               <Popup

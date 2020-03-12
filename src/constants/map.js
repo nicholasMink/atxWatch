@@ -10,6 +10,12 @@ export const MAP_DEFAULT = {
     value: 'ALL',
     label: 'GREATER AUSTIN AREA'
   },
+  scaleStyles: {
+    backgroundColor: 'transparent',
+    color: '#fff',
+    boxShadow: 'none',
+    border: 'none',
+  }
 };
 
 
